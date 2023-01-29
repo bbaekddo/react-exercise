@@ -6,12 +6,19 @@
 </head>
 <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-<script>
-    const root = document.getElementById('root');
-    const span = React.createElement('span', {id: 'cool-span'}, `Hello I'm a span!`);
-    ReactDOM.createRoot(root).render(span);
-</script>
 <body>
     <div id="root"></div>
+    <button id="btn"></button>
 </body>
+<script>
+    const root = document.getElementById('root');
+    const span = React.createElement('span', {
+        onMouseEnter: () => console.log(`mouse enter`),
+    }, `Hello I'm a span!`);
+    const btn = React.createElement('button', {
+        onClick: () => console.log(`I'm clicked!`),
+    }, `Click me`);
+    const container = React.createElement('div', null, [span, btn]);
+    ReactDOM.createRoot(root).render(container);
+</script>
 </html>
