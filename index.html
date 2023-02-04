@@ -17,7 +17,7 @@
         ReactDOM.createRoot(root).render(<App />, root);
     };
 
-    const App = () => {
+    const MinutesToHour = () => {
         const [amount, setAmount] = React.useState(0);
         const [invert, setInvert] = React.useState(false);
         const onChange = (event) => {
@@ -32,7 +32,6 @@
 
         return (
                 <div>
-                    <h3>Super Converter</h3>
                     <div>
                         <label className="minutes">
                             Minutes
@@ -51,7 +50,36 @@
                     </div>
                 </div>
         );
-    }
+    };
+
+    const KmToMiles = () => {
+
+    };
+
+    const App = () => {
+        const [index, setIndex] = React.useState('start');
+        const onSelect = (event) => {
+            setIndex(event.target.value);
+            console.log(index);
+        };
+
+        return (
+                <div>
+                    <h1>Super Converter</h1>
+                    <label>
+                        <select value={index} onChange={onSelect}>
+                            <option value="start">Select your option</option>
+                            <option value="0">Minutes & Hours</option>
+                            <option value="1">Kilometers & Miles</option>
+                        </select>
+                        <hr></hr>
+                        { index === 'start' ? 'Please select' : null }
+                        { index === '0' ? <MinutesToHour /> : null }
+                        { index === '1' ? <KmToMiles /> : null }
+                    </label>
+                </div>
+        );
+    };
 
     reRedner();
 </script>
