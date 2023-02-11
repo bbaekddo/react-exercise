@@ -17,66 +17,29 @@
         ReactDOM.createRoot(root).render(<App />, root);
     };
 
-    const MinutesToHour = () => {
-        const [amount, setAmount] = React.useState(0);
-        const [invert, setInvert] = React.useState(false);
-        const onChange = (event) => {
-            setAmount(event.target.value);
-        };
-
-        const reset = () => setAmount(0);
-        const onInvert = () => {
-            setInvert(currentState => !currentState);
-            reset();
-        };
-
+    const Btn = ({ banana }) => {
         return (
-                <div>
-                    <div>
-                        <label className="minutes">
-                            Minutes
-                            <input value={invert ? amount * 60 : amount} id="minutes" type="Number" onChange={onChange} disabled={invert} />
-                        </label>
-                    </div>
-                    <div>
-                        <label className="hours">
-                            Hours
-                            <input value={invert ? amount : Math.floor(amount / 60)} id="hours" type="Number" onChange={onChange} disabled={!invert}/>
-                        </label>
-                    </div>
-                    <div>
-                        <button onClick={reset}>Reset</button>
-                        <button onClick={onInvert}>{invert ? 'Go Back' : 'Invert'}</button>
-                    </div>
-                </div>
-        );
+            <button style={{
+                backgroundColor: "tomato",
+                color: "white",
+                padding: "10px 20px",
+                border: 0,
+                borderRadius: 10,
+            }}>
+                {banana}
+            </button>
+        )
     };
 
-    const KmToMiles = () => {
-
-    };
+    const ConfirmBtn = () => {
+        return <div>Confirm</div>
+    }
 
     const App = () => {
-        const [index, setIndex] = React.useState('start');
-        const onSelect = (event) => {
-            setIndex(event.target.value);
-            console.log(index);
-        };
-
         return (
                 <div>
-                    <h1>Super Converter</h1>
-                    <label>
-                        <select value={index} onChange={onSelect}>
-                            <option value="start">Select your option</option>
-                            <option value="0">Minutes & Hours</option>
-                            <option value="1">Kilometers & Miles</option>
-                        </select>
-                        <hr></hr>
-                        { index === 'start' ? 'Please select' : null }
-                        { index === '0' ? <MinutesToHour /> : null }
-                        { index === '1' ? <KmToMiles /> : null }
-                    </label>
+                    <Btn banana="Save Changes!" />
+                    <Btn banana="Continue" />
                 </div>
         );
     };
