@@ -1,0 +1,22 @@
+{
+  "name": "react-exercise",
+  "version": "1.0.0",
+  "description": "react app test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbaekddo/react-exercise.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "bbaekddo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bbaekddo/react-exercise/issues"
+  },
+  "homepage": "https://github.com/bbaekddo/react-exercise#readme"
+}
