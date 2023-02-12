@@ -17,29 +17,30 @@
         ReactDOM.createRoot(root).render(<App />, root);
     };
 
-    const Btn = ({ banana }) => {
+    const Btn = ({ text, fontSize = 16 }) => {
         return (
-            <button style={{
+            <button
+                onClick={fontSize}
+                style={{
                 backgroundColor: "tomato",
                 color: "white",
                 padding: "10px 20px",
                 border: 0,
                 borderRadius: 10,
             }}>
-                {banana}
+                { text }
             </button>
         )
     };
 
-    const ConfirmBtn = () => {
-        return <div>Confirm</div>
-    }
-
     const App = () => {
+        const [value, setValue] = React.useState('Save Changes');
+        const changeValue = () => setValue('Revert Changes');
+
         return (
                 <div>
-                    <Btn banana="Save Changes!" />
-                    <Btn banana="Continue" />
+                    <Btn text={value} fontSize={changeValue} />
+                    <Btn text={12} fontSize={'Continue'} />
                 </div>
         );
     };
