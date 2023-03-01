@@ -27,6 +27,9 @@ function App() {
                 />
                 <button>Add To Do</button>
             </form>
+            {toDos.map((item, index) => (
+                <li>{index} > {item}</li>
+            ))}
             <Button text={'Continue'} />
         </div>
     );
