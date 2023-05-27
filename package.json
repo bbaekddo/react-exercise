@@ -16,7 +16,8 @@
     "start": "node_modules/.bin/react-scripts start",
     "build": "node_modules/.bin/react-scripts build",
     "test": "node_modules/.bin/react-scripts test",
-    "eject": "node_modules/.bin/react-scripts eject"
+    "eject": "node_modules/.bin/react-scripts eject",
+    "deploy": ""
   },
   "eslintConfig": {
     "extends": [
@@ -37,5 +38,6 @@
   },
   "devDependencies": {
     "react-router-dom": "^5.3.0"
-  }
+  },
+  "homepage": "https://bbaekddo.github.io/react-exercise"
 }
